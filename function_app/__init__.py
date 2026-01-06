@@ -28,7 +28,7 @@ def http_trigger(req: func.HttpRequest) -> func.HttpResponse:
         )
 
 
-@app.blob_trigger(arg_name="myblob", path="mycontainer",
+@app.blob_trigger(arg_name="myblob", path="victorcontainer",
                                connection="BlobStorageConnectionString") 
 def BlobTrigger(myblob: func.InputStream):
     logging.info(f"Python blob trigger function processed blob"
