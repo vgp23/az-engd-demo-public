@@ -37,7 +37,9 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      # Optional: Add step to run tests here
+      - name: Run tests
+        run: |
+          pytest -v
 
       - name: Zip artifact for deployment
         run: zip release.zip ./* -r
@@ -72,4 +74,5 @@ jobs:
           app-name: 'func-engd-victor-st2025-002'
           slot-name: 'Production'
           package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
+
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_BA6E4DE064404E2F81E328E99449AB43 }}
