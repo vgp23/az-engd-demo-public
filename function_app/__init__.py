@@ -58,7 +58,7 @@ def http_read_blob(req: func.HttpRequest) -> func.HttpResponse:
     # 1. Get the account URL (e.g., https://aaa.blob.core.windows.net)
     # Best practice: Store this in an App Setting
     account_url = os.environ.get("BLOB_STORAGE_ACCOUNT_URL")
-    container_name = "mycontainer"
+    container_name = "victorcontainer"
     blob_name = req.params.get('file')
 
     if not blob_name:
