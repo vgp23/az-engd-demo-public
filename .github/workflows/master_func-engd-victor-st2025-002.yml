@@ -39,6 +39,7 @@ jobs:
 
       - name: Run tests
         run: |
+          export PYTHONPATH=$PYTHONPATH:$(pwd)
           pytest tests -v
 
       - name: Zip artifact for deployment
@@ -76,5 +77,6 @@ jobs:
           package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
 
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_BA6E4DE064404E2F81E328E99449AB43 }}
+
 
 
